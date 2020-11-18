@@ -1,13 +1,79 @@
 body {
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+  font: 14px "Century Gothic", Futura, sans-serif;
+  background-color: #ffcbf2;
+}
+/* Remove the navbar's default rounded borders and increase the bottom margin */
+.navbar {
+  border-radius: 0;
+  background-color: #f3c4fb;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+.navbar-text {
+  width: 100%;
+}
+.navbar-brand {
+  font-size: 18px;
+  padding: 15px 15px;
+}
+.navbar-header {
+  align-items: center;
+  width: 100%;
+}
+.container-fluid > .navbar-collapse,
+.container-fluid > .navbar-header,
+.container > .navbar-collapse,
+.container > .navbar-header {
+  margin: 0;
+}
+.navbar-collapse.collapse.in > .navbar-text,
+.navbar-collapse.collapse.in > .nav.navbar-nav > .active {
+  display: none;
+}
+.navbar-collapse.collapse.in {
+  display: block !important;
+  flex-direction: row;
+}
+
+@media (min-width: 764px) {
+  .navbar-text {
+    /* width: 75%; */
+    text-align: center;
+    margin: 0;
+  }
+  .navbar-header {
+    display: none;
+  }
+  .navbar-collapse.collapse.in > .navbar-text,
+  .navbar-collapse.collapse.in > .nav.navbar-nav > .active {
+    display: inline;
+  }
+}
+.navbar-nav {
+  flex-direction: row;
+  margin: 0px;
+}
+.navbar-default .navbar-nav > .active > a,
+.navbar-default .navbar-nav > .active > a:focus,
+.navbar-default .navbar-nav > .active > a:hover {
+  color: #777;
+  background-color: #f3c4fb;
+}
+/* justify center and space out cart/search/account */
+.navbar-nav > li > a {
+  padding: 5px 10px;
+}
+
+.form-inline {
+  display: block;
+}
+/* Remove the jumbotron's default bottom margin */
+.jumbotron {
+  margin-bottom: 10;
+  background-color: #d0d1ff;
+}
+
+/* Add a gray background color and some padding to the footer */
+footer {
+  background-color: #d0d1ff;
+  padding: 25px;
 }
