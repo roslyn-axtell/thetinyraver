@@ -20,7 +20,6 @@ class Header extends React.Component {
                 <span class="icon-bar"></span>
                 <span class="icon-bar"></span>
               </button>
-
               <a class="navbar-brand" href="#">
                 thetinyraver
               </a>
