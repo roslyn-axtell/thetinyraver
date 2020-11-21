@@ -1,6 +1,7 @@
 body {
   font: 14px "Century Gothic", Futura, sans-serif;
-  background-color: #ffcbf2;
+  background-color: #ffffff;
+  color: #212529;
 }
 /* Remove the navbar's default rounded borders and increase the bottom margin */
 .navbar {
@@ -12,20 +13,25 @@ body {
 
 .navbar-text {
   width: 100%;
+  font-weight: 500;
 }
-.navbar-brand {
+.navbar-default .navbar-brand {
   font-size: 18px;
-  padding: 15px 15px;
+  padding: 0;
+  height: auto;
+  color: #212529;
+  font-weight: 550;
 }
 .navbar-header {
   align-items: center;
   width: 100%;
+  margin-bottom: 0;
 }
 .container-fluid > .navbar-collapse,
 .container-fluid > .navbar-header,
 .container > .navbar-collapse,
 .container > .navbar-header {
-  margin: 0;
+  margin: 9px;
 }
 
 /* remove weird background color on menu */
@@ -36,14 +42,22 @@ body {
 .navbar-default .navbar-form {
   border-color: transparent;
   background-color: transparent;
+  margin: 0;
+  padding: 0;
 }
 
-.navbar-collapse.collapse.in {
+/* change color of dropdown menu icon */
+.navbar-default .navbar-toggle .icon-bar {
+  background-color: #212529;
+}
+
+/* prevents dropdown from immediately disappearing (display: none) */
+.collapse.in {
   display: block !important;
 }
 
 /* remove home and announcement on smaller screen dropdown */
-@media (max-width: 763px) {
+@media (max-width: 764px) {
   .navbar-text {
     display: none;
   }
@@ -53,13 +67,17 @@ body {
 }
 @media (min-width: 764px) {
   .navbar-text {
-    width: 70%;
+    width: 75%;
     text-align: center;
     margin: 0;
   }
   .navbar-header {
     display: none;
   }
+}
+
+.navbar-default .navbar-text {
+  color: #212529;
 }
 
 .navbar-nav {
@@ -70,19 +88,34 @@ body {
 .navbar-default .navbar-nav > .active > a,
 .navbar-default .navbar-nav > .active > a:focus,
 .navbar-default .navbar-nav > .active > a:hover {
-  color: #777;
   background-color: #f3c4fb;
+  color: #212529;
 }
 
 /* justify center and space out cart/search/account */
 .navbar-nav > li > a {
   padding: 5px 10px;
   float: right;
+  font-weight: 550;
+}
+
+.navbar-default .navbar-nav > li > a {
+  color: #272129;
 }
 
 .form-inline {
   display: block;
 }
+
+button {
+  background-color: transparent;
+  border: 0;
+}
+
+button:focus {
+  outline: 0;
+}
+
 /* Remove the jumbotron's default bottom margin */
 .jumbotron {
   margin-top: 0;
@@ -95,6 +128,71 @@ body {
     rgba(208, 209, 255, 1) 50%,
     rgba(192, 253, 255, 1) 100%
   );
+}
+
+div#home-filters {
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  width: 100%;
+  padding: 10px 10px;
+  text-align: center;
+  background: #ffffff;
+  /* background: radial-gradient(
+    circle,
+    rgba(236, 188, 253, 1) 0%,
+    rgba(208, 209, 255, 1) 50%,
+     100%
+  ); */
+}
+
+#home-filters > span {
+  margin: 0 0.9em;
+  font-weight: 550;
+
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+}
+/* hide each home filter */
+#shop,
+#themed,
+#features {
+  display: none;
+}
+
+/* improve ui of home filters */
+span#shop-categories:hover,
+span#themed-categories:hover,
+span#features-categories:hover {
+  cursor: pointer;
+}
+
+/* show each home filter on hover */
+div#shop:hover,
+span#shop-categories:hover ~ div#shop,
+div#themed:hover,
+span#themed-categories:hover ~ div#themed,
+div#features:hover,
+span#features-categories:hover ~ div#features {
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  display: block;
+}
+
+.btn,
+.btn:focus,
+.btn:hover {
+  margin: 1em 2em;
+  padding: 10px 10px;
+  font-weight: 400;
+  font-size: 9pt;
+  color: #212529;
+  text-decoration: none;
+  transition: none;
+  border: 0 solid transparent;
+  border-radius: 0;
 }
 
 /* Add a gray background color and some padding to the footer */

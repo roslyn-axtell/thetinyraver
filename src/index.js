@@ -27,7 +27,7 @@ class Header extends React.Component {
             <div class="collapse navbar-collapse" id="myNavbar">
               <ul class="nav navbar-nav">
                 <li class="active">
-                  <a href="#">Home</a>
+                  <a href="#">HOME</a>
                 </li>
               </ul>
               <p class="navbar-text">Welcome to thetinyraver!</p>
@@ -54,12 +54,70 @@ class Header extends React.Component {
 
         <div class="jumbotron">
           <div class="container text-center">
-            <img
-              src="images/thetinyraverlogotransparent.png"
-              class="img-responsive"
-              style={{ width: "35%", margin: "auto" }}
-              alt="Image"
-            ></img>
+            <div id="logo-image">
+              <img
+                src="images/thetinyraverlogotransparent.png"
+                class="img-responsive"
+                style={{ width: "35%", margin: "auto" }}
+                alt="Image"
+              ></img>
+            </div>
+          </div>
+        </div>
+        <div id="home-filters">
+          <span id="shop-categories">
+            SHOP <span class="caret"></span>
+          </span>
+          <span id="themed-categories">
+            THEMED <span class="caret"></span>
+          </span>
+          <span id="features-categories">
+            FEATURES <span class="caret"></span>
+          </span>
+
+          <div id="shop">
+            <button type="button" class="btn btn-link">
+              ALL
+            </button>
+            <button type="button" class="btn btn-link">
+              WALL ART
+            </button>
+            <button type="button" class="btn btn-link">
+              JEWELRY
+            </button>
+            <button type="button" class="btn btn-link">
+              SHOES
+            </button>
+            <button type="button" class="btn btn-link">
+              EARRINGS
+            </button>
+            <button type="button" class="btn btn-link">
+              NECKLACES
+            </button>
+          </div>
+
+          <div id="themed">
+            <button type="button" class="btn btn-link">
+              ILLENIUM
+            </button>
+            <button type="button" class="btn btn-link">
+              SLANDER
+            </button>
+            <button type="button" class="btn btn-link">
+              EXCISION
+            </button>
+          </div>
+
+          <div id="features">
+            <button type="button" class="btn btn-link">
+              CUTE
+            </button>
+            <button type="button" class="btn btn-link">
+              SPOOKY
+            </button>
+            <button type="button" class="btn btn-link">
+              BOLD
+            </button>
           </div>
         </div>
 
@@ -67,12 +125,8 @@ class Header extends React.Component {
           <div class="row">
             <div class="col-sm-4">
               <div class="panel panel-primary">
-                <div class="panel-heading">BLACK FRIDAY DEAL</div>
                 <div class="panel-body">
                   <img src=""></img>
-                </div>
-                <div class="panel-footer">
-                  Buy 50 mobiles and get a gift card
                 </div>
               </div>
             </div>
