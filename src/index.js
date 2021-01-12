@@ -2,8 +2,18 @@ import React from "react";
 import ReactDOM from "react-dom";
 import "bootstrap/dist/css/bootstrap.css";
 import "./index.css";
+var listOfImages = [];
 
 class Header extends React.Component {
+  importAll(i) {
+    return i.keys().map(i);
+  }
+  componentWillMount() {
+    listOfImages = this.importAll(
+      require.context("./productImages", false, /\.(png|jpe?g|svg)$/)
+    );
+  }
+
   render() {
     return (
       <div>
@@ -30,7 +40,7 @@ class Header extends React.Component {
                   <a href="#">HOME</a>
                 </li>
               </ul>
-              <p class="navbar-text">Welcome to thetinyraver!</p>
+              <p class="navbar-text">Welcome to The Tiny Raver!</p>
               <ul class="nav navbar-nav navbar-right">
                 <li>
                   <a href="#">
@@ -56,9 +66,9 @@ class Header extends React.Component {
           <div class="container text-center">
             <div id="logo-image">
               <img
-                src="images/thetinyraverlogotransparent.png"
+                src="logo/thetinyraverlogotransparent.png"
                 class="img-responsive"
-                style={{ width: "35%", margin: "auto" }}
+                style={{ width: "25%", margin: "auto" }}
                 alt="Image"
               ></img>
             </div>
@@ -123,107 +133,26 @@ class Header extends React.Component {
 
         <div class="container">
           <div class="row">
-            <div class="col-sm-4">
-              <div class="panel panel-primary">
-                <div class="panel-body">
-                  <img src=""></img>
+            {listOfImages.map((image, index) => (
+              <div class="col">
+                <div class="product-image">
+                  <div class="panel-body">
+                    <img
+                      key={index}
+                      src={image.default}
+                      alt={image.default}
+                    ></img>
+                  </div>
+                  <div class="card-footer">{image.default}</div>
+                  <div class="card-footer price">$15</div>
                 </div>
               </div>
-            </div>
-            <div class="col-sm-4">
-              <div class="panel panel-danger">
-                <div class="panel-heading">BLACK FRIDAY DEAL</div>
-                <div class="panel-body">
-                  <img
-                    src="https://placehold.it/150x80?text=IMAGE"
-                    class="img-responsive"
-                    style={{ width: "100%" }}
-                    alt="Image"
-                  ></img>
-                </div>
-                <div class="panel-footer">
-                  Buy 50 mobiles and get a gift card
-                </div>
-              </div>
-            </div>
-            <div class="col-sm-4">
-              <div class="panel panel-success">
-                <div class="panel-heading">BLACK FRIDAY DEAL</div>
-                <div class="panel-body">
-                  <img
-                    src="https://placehold.it/150x80?text=IMAGE"
-                    class="img-responsive"
-                    style={{ width: "100%" }}
-                    alt="Image"
-                  ></img>
-                </div>
-                <div class="panel-footer">
-                  Buy 50 mobiles and get a gift card
-                </div>
-              </div>
-            </div>
+            ))}
           </div>
         </div>
-        <br></br>
-
-        <div class="container">
-          <div class="row">
-            <div class="col-sm-4">
-              <div class="panel panel-primary">
-                <div class="panel-heading">BLACK FRIDAY DEAL</div>
-                <div class="panel-body">
-                  <img
-                    src="https://placehold.it/150x80?text=IMAGE"
-                    class="img-responsive"
-                    style={{ width: "100%" }}
-                    alt="Image"
-                  ></img>
-                </div>
-                <div class="panel-footer">
-                  Buy 50 mobiles and get a gift card
-                </div>
-              </div>
-            </div>
-            <div class="col-sm-4">
-              <div class="panel panel-primary">
-                <div class="panel-heading">BLACK FRIDAY DEAL</div>
-                <div class="panel-body">
-                  <img
-                    src="https://placehold.it/150x80?text=IMAGE"
-                    class="img-responsive"
-                    style={{ width: "100%" }}
-                    alt="Image"
-                  ></img>
-                </div>
-                <div class="panel-footer">
-                  Buy 50 mobiles and get a gift card
-                </div>
-              </div>
-            </div>
-            <div class="col-sm-4">
-              <div class="panel panel-primary">
-                <div class="panel-heading">BLACK FRIDAY DEAL</div>
-                <div class="panel-body">
-                  <img
-                    src="https://placehold.it/150x80?text=IMAGE"
-                    class="img-responsive"
-                    style={{ width: "100%" }}
-                    alt="Image"
-                  ></img>
-                </div>
-                <div class="panel-footer">
-                  Buy 50 mobiles and get a gift card
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-        <br></br>
-
         <footer class="container-fluid text-center">
-          <p>Online Store Copyright</p>
           <form class="form-inline">
-            Get deals:
+            Subscribe:
             <input
               type="email"
               class="form-control"
@@ -241,10 +170,6 @@ class Header extends React.Component {
 }
 
 class Home extends React.Component {
-  // renderSquare(i) {
-  //   return <Square />;
-  // }
-
   render() {
     return (
       <div>

@@ -2,6 +2,7 @@ body {
   font: 14px "Century Gothic", Futura, sans-serif;
   background-color: #ffffff;
   color: #212529;
+  overflow-x: hidden;
 }
 /* Remove the navbar's default rounded borders and increase the bottom margin */
 .navbar {
@@ -106,6 +107,9 @@ body {
 .form-inline {
   display: block;
 }
+.form-inline > input {
+  margin: 10px;
+}
 
 button {
   background-color: transparent;
@@ -138,18 +142,11 @@ div#home-filters {
   padding: 10px 10px;
   text-align: center;
   background: #ffffff;
-  /* background: radial-gradient(
-    circle,
-    rgba(236, 188, 253, 1) 0%,
-    rgba(208, 209, 255, 1) 50%,
-     100%
-  ); */
 }
 
 #home-filters > span {
-  margin: 0 0.9em;
+  margin: 0 0.8em;
   font-weight: 550;
-
   position: sticky;
   top: 0;
   z-index: 1000;
@@ -195,8 +192,43 @@ span#features-categories:hover ~ div#features {
   border-radius: 0;
 }
 
+.btn.btn-danger {
+  background-color: rgba(192, 253, 255, 1);
+  border-radius: 5px;
+  margin-left: 0;
+}
+.container {
+  display: block;
+  max-width: 100%;
+}
+
+.row {
+  margin: 0;
+  width: 100%;
+}
+.product-image {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.panel-body > img {
+  width: 275px;
+  height: 277.5px;
+}
+
+.card-footer {
+  background-color: transparent;
+  text-align: center;
+  border-top: 0;
+  font-weight: 600;
+  max-width: 275px;
+}
+
+.card-footer.price {
+  font-weight: 400;
+}
 /* Add a gray background color and some padding to the footer */
 footer {
-  background-color: #d0d1ff;
+  background-color: #f3c4fb;
   padding: 25px;
 }
